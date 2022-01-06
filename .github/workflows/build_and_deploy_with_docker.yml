@@ -9,7 +9,7 @@
       branches: [ master ]
   jobs:
     testAndBuild:
-      name: Test And Build
+      name: Test And Build Docker Iamge
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v2
@@ -27,14 +27,10 @@
         - name: Build with Maven
           id: build
           run: mvn -B package --file pom.xml
-        - name: Temporarily save jar artifact
-          uses: actions/upload-artifact@v2
-          with:
-            name: jar-artifact
-            path: ${{ github.workspace }}/target/*.jar
-            retention-days: 1
-        - name: Print Version
-          run: "echo 'New Version: ${{steps.bump.outputs.version}}'"
+
+        - name: build docker Image
+          run: |
+                docker build  -t  SchedularService  .
       outputs:
         jar_name: ci-0.0.1-release.jar
 
