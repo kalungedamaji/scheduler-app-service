@@ -31,6 +31,13 @@
         - name: build docker Image
           run: |
                 docker build  -t  schedularservice  .
+
+        - name: Temporarily save docker image
+          uses: actions/upload-artifact@v2
+          with:
+            name: schedularservice
+            path: schedularservice
+            retention-days: 1
       outputs:
         jar_name: ci-0.0.1-release.jar
 
