@@ -30,13 +30,13 @@
 
         - name: build docker Image
           run: |
-                docker build  -t  schedularservice  .
+                docker build  -t  scheduler-app-service-1.0.0-release.jar  .
 
         - name: Temporarily save docker image
           uses: actions/upload-artifact@v2
           with:
             name: schedularservice
-            path: ${{ github.workspace }}/*schedularservice.*
+            path: ${{ github.workspace }}/scheduler-app-service-1.0.0-release.jar
             retention-days: 1
       outputs:
         jar_name: ci-0.0.1-release.jar

@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.scheduler</groupId>
 	<artifactId>scheduler-app-service</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0-release</version>
 	<name>scheduler-app-service</name>
 	<description>Sample Rest Based project for scheduler Service</description>
 
