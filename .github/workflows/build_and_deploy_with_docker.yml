@@ -30,7 +30,7 @@
 
         - name: build docker Image
           run: |
-                docker build  -t  SchedularService  .
+                docker build  -t  schedularservice  .
       outputs:
         jar_name: ci-0.0.1-release.jar
 
