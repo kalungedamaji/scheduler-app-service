@@ -10,7 +10,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @EnableJpaAuditing
 @SpringBootApplication
-@EnableDiscoveryClient
 @EnableConfigurationProperties(PageProperty.class)
 public class SchedulerAppServiceApplication {
 
