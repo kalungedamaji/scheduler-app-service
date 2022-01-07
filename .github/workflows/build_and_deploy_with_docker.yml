@@ -33,7 +33,7 @@
                 docker build  -t scheduler-app-service   .
         - name: push the docker image
           env:
-            HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+            HEROKU_API_KEY: ${{ secrets.CONTAINER_REGISTRY_API_KEY }}
           run: |
            docker login --username=${{ secrets.CONTAINER_REGISTRY_USER_NAME }} --password=${{ secrets.CONTAINER_REGISTRY_API_KEY }}  registry.heroku.com
            docker tag scheduler-app-service  registry.heroku.com/scheduler-app-service/backend
