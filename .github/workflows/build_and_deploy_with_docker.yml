@@ -30,17 +30,15 @@
 
         - name: build docker Image
           run: |
-                docker build  -t scheduler-app-service   .
+                docker build  -t  ${{ secrets.CONTAINER_IAMGE_NAME }}   .
         - name: push the docker image
           env:
             HEROKU_API_KEY: ${{ secrets.CONTAINER_REGISTRY_API_KEY }}
           run: |
-           docker login --username=${{ secrets.CONTAINER_REGISTRY_USER_NAME }} --password=${{ secrets.CONTAINER_REGISTRY_API_KEY }}  registry.heroku.com
-           docker tag scheduler-app-service  registry.heroku.com/scheduler-app-service/backend
-           docker push  registry.heroku.com/scheduler-app-service/backend
-           heroku container:release backend -a scheduler-app-service   
+           docker login --username=${{ secrets.CONTAINER_REGISTRY_USER_NAME }} --password=${{ secrets.CONTAINER_REGISTRY_API_KEY }}  ${{ secrets.CONTAINER_REGISTRY }}
+           docker tag ${{ secrets.CONTAINER_IAMGE_NAME }} ${{ secrets.CONTAINER_REGISTRY }}/${{ secrets.HEROKU_APP_ANME }} /backend
+           docker push  ${{ secrets.CONTAINER_REGISTRY }}/${{ secrets.HEROKU_APP_ANME }} /backend
+           heroku container:release backend -a ${{ secrets.HEROKU_APP_ANME }}  
 
-      outputs:
-        image_name: scheduler-app-service
 
 
