@@ -36,9 +36,9 @@
             HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           run: |
            docker login --username=${{ secrets.HEROKU_USER_NAME }} --password=${{ secrets.HEROKU_API_KEY }} registry.heroku.com
-           docker tag scheduler-app-service  registry.heroku.com/scheduler-app-service:latest
-           docker push registry.heroku.com/scheduler-app-service
-           heroku container:release scheduler-app-service -a scheduler-app-service   
+           docker tag scheduler-app-service  registry.heroku.com/scheduler-app-service/backennd:latest
+           docker push registry.heroku.com/scheduler-app-service/backennd
+           heroku container:release backennd -a scheduler-app-service   
 
       outputs:
         image_name: scheduler-app-service
