@@ -1,6 +1,6 @@
 server:
   port: 8081
-  JAVA_OPTS: -Xmx512m
+  JAVA_OPTS: -Xmx300m
 spring:
   application:
     name: scheduler-app-service
