@@ -1,4 +1,4 @@
-server:
+Sserver:
   port: 8081
   JAVA_OPTS: -Xms256m -Xmx2048m
 spring:
@@ -36,14 +36,14 @@ spring:
  #   show-sql: true
   main:
     allow-bean-definition-overriding: true
-  flyway:
-    baseline-on-migrate: true
-    enabled: false
-    user: dkalunge
-    password: mysecretpassword
-    url: jdbc:postgresql://localhost:5432/postgres
-    schemas:
-      - PUBLIC
+#  flyway:
+#    baseline-on-migrate: true
+#    enabled: false
+#    user: dkalunge
+#    password: mysecretpassword
+#    url: jdbc:postgresql://localhost:5432/postgres
+#    schemas:
+#      - PUBLIC
 org:
   task:
     schedule:
