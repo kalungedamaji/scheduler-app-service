@@ -40,7 +40,7 @@ spring:
     baseline-on-migrate: true
     enabled: true
     user: dkalunge
-    password: postgresql
+    password: mysecretpassword
     url: jdbc:postgresql://localhost:5432/postgres
     schemas:
       - PUBLIC
