@@ -1,6 +1,6 @@
 Sserver:
   port: 8081
-  JAVA_OPTS: -Xmx256m -Xss512k
+  JAVA_OPTS: -Xms512k  -Xmx256m
 spring:
   application:
     name: scheduler-app-service
