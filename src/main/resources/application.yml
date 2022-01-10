@@ -1,6 +1,6 @@
 Sserver:
   port: 8081
-  JAVA_OPTS: -Xms512k  -Xmx256m
+  JAVA_OPTS: -Xms512k  -Xmx256m -XX:MetaspaceSize=100M
 spring:
   application:
     name: scheduler-app-service
@@ -61,4 +61,4 @@ org:
 
 logging:
   level:
-    org.scheduler: debug
+    org.scheduler: trace
