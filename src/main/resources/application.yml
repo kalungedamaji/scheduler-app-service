@@ -1,6 +1,6 @@
 Sserver:
   port: 8081
-  JAVA_OPTS: -Xmx300m -Xss512k -XX:CICompilerCount=2 -XX:MetaspaceSize=100M
+  JAVA_OPTS: -Xmx300m -Xss512k -XX:CICompilerCount=2 -XX:MetaspaceSize=100M  -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintTenuringDistribution -XX:+UseConcMarkSweepGC
 spring:
   application:
     name: scheduler-app-service
